@@ -1,0 +1,49 @@
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form  [formGroup]="registerForm" (ngSubmit)="onSubmit()"  class="login">
+                <div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input formControlName="firstName" type="text" class="login__input" placeholder="First name">
+                    <div *ngIf="f.firstName.touched && f.firstName.invalid" class="alert alert-danger">
+                        <div *ngIf="f.firstName.errors?.['required']">First name is required.</div>  
+                    </div>
+				</div>
+                <div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input formControlName="lastName" type="text" class="login__input" placeholder="Last name">
+                    <div *ngIf="f.lastName.touched && f.lastName.invalid" class="alert alert-danger">
+                    <div *ngIf="f.lastName.errors?.['required']">Last name is required.</div>  
+                    </div>
+
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input formControlName="email" type="text" class="login__input" placeholder="Email">
+                    <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                        <div *ngIf="f.email.errors?.['required']">Email is required.</div>
+                        <div *ngIf="f.email.errors?.['email']">Please enter valid email address.</div>
+                        </div>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input formControlName="password" type="password" class="login__input" placeholder="Password">
+                    <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                     <div *ngIf="f.password.errors?.['required']">Password is required.</div>
+                    </div>
+				</div>
+                
+				<button class="button login__submit">
+					<span class="button__text">Register</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+			</form>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
