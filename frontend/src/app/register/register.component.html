@@ -4,16 +4,16 @@
 			<form  [formGroup]="registerForm" (ngSubmit)="onSubmit()"  class="login">
                 <div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input formControlName="firstName" type="text" class="login__input" placeholder="First name">
-                    <div *ngIf="f.firstName.touched && f.firstName.invalid" class="alert alert-danger">
-                        <div *ngIf="f.firstName.errors?.['required']">First name is required.</div>  
+					<input formControlName="firstname" type="text" class="login__input" placeholder="First name">
+                    <div *ngIf="f.firstname.touched && f.firstname.invalid" class="alert alert-danger">
+                        <div *ngIf="f.firstname.errors?.['required']">First name is required.</div>  
                     </div>
 				</div>
                 <div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input formControlName="lastName" type="text" class="login__input" placeholder="Last name">
-                    <div *ngIf="f.lastName.touched && f.lastName.invalid" class="alert alert-danger">
-                    <div *ngIf="f.lastName.errors?.['required']">Last name is required.</div>  
+					<input formControlName="lastname" type="text" class="login__input" placeholder="Last name">
+                    <div *ngIf="f.lastname.touched && f.lastname.invalid" class="alert alert-danger">
+                    <div *ngIf="f.lastname.errors?.['required']">Last name is required.</div>  
                     </div>
 
 				</div>

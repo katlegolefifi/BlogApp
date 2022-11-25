@@ -4,6 +4,14 @@ const app = express()
 const db = require('./queries')
 const port = 3000
 
+const cors = require('cors');
+
+var corsOptions = {
+  origin: "*"
+}
+
+app.use(cors(corsOptions));
+
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
