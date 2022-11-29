@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from 'express';
 import { UserService } from '../service/user.service';
 
 @Component({
@@ -19,6 +20,10 @@ export class RegisterComponent {
   });
 
   constructor(private userService: UserService){}
+
+  ngOnInit(): void {
+  }
+
   
   get f(){
     return this.registerForm.controls;
@@ -29,7 +34,7 @@ export class RegisterComponent {
    onSubmit(){
     console.log(this.registerForm.value);
 
-    this.userService.createUser(this.registerForm.value).subscribe((next:any)=>{
+    this.userService.registerUser(this.registerForm.value).subscribe((next:any)=>{
       console.log('user added');
       
     })

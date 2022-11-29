@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const db = require('./queries')
+const login = require('./login')
+const register = require('./registration')
 const port = 3000
 
 const cors = require('cors');
@@ -28,6 +30,11 @@ app.get('/', (request, response) => {
   app.post('/users', db.createUser)
   app.put('/users/:id', db.updateUser)
   app.delete('/users/:id', db.deleteUser)
+
+
+  // login routes
+  app.post('/login', login.login)
+  app.post('/register', register.registerUser)
 
   app.listen(port, () => {
     console.log(`App running on port ${port}.`)

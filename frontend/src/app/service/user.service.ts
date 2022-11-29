@@ -12,4 +12,12 @@ constructor(private http: HttpClient) { }
     return this.http.post(`${this.baseUrl}/users `,body)
   }
 
+  registerUser(body:any){
+    return this.http.post(`${this.baseUrl}/users `,body)
+  }
+
+  login(body:any){
+    return this.http.post(`${this.baseUrl}/users `,body)
+  }
+
 }
