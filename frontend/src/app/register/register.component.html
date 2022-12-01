@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-			<form  [formGroup]="registerForm" (ngSubmit)="onSubmit()"  class="login">
+			<form  [formGroup]="registerForm" (ngSubmit)="onSubmit()"  class="login"> 
                 <div class="login__field">
 					<i class="login__icon fas fa-user"></i>
 					<input formControlName="firstname" type="text" class="login__input" placeholder="First name">
@@ -22,8 +22,8 @@
 					<input formControlName="email" type="text" class="login__input" placeholder="Email">
                     <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
                         <div *ngIf="f.email.errors?.['required']">Email is required.</div>
-                        <div *ngIf="f.email.errors?.['email']">Please enter valid email address.</div>
-                        </div>
+						<div *ngIf="f.email.errors?.['email']">Please enter valid email address.</div>
+					</div>
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
@@ -37,7 +37,7 @@
 					<span class="button__text">Register</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
-			</form>
+			</form> 
 		</div>
 		<div class="screen__background">
 			<span class="screen__background__shape screen__background__shape4"></span>

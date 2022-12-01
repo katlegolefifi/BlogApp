@@ -13,11 +13,11 @@ constructor(private http: HttpClient) { }
   }
 
   registerUser(body:any){
-    return this.http.post(`${this.baseUrl}/users `,body)
+    return this.http.post(`${this.baseUrl}/register `,body)
   }
 
   login(body:any){
-    return this.http.post(`${this.baseUrl}/users `,body)
+    return this.http.post(`${this.baseUrl}/login `,body)
   }
 
 }

@@ -6,7 +6,7 @@ const pool = new Pool({
   password: 'admin12345',
   port: 5432,
 })
-
+// registration database
 const getUsers = (request, response) => {
     pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
       if (error) {
@@ -64,6 +64,8 @@ const getUsers = (request, response) => {
       response.status(200).send(`User deleted with ID: ${id}`)
     })
   }
+  // 
+
 
   module.exports = {
     getUsers,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from 'express';
+import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class RegisterComponent {
     
   });
 
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService, private router:  Router){}
 
   ngOnInit(): void {
   }
@@ -36,6 +36,8 @@ export class RegisterComponent {
 
     this.userService.registerUser(this.registerForm.value).subscribe((next:any)=>{
       console.log('user added');
+
+      this.router.navigate(['/welcome']);
       
     })
 

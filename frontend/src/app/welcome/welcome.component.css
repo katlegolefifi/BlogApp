@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 576px) and (max-width: 992px) { 
+.img{
+    margin-left: 10px;
+    margin-bottom: 180px;
+    margin-right: 10px;
+    width: 80%;
+    height: 20rem;
+
+}
+
+.wave{
+    padding-top: 40rem;
+}
+
+.hero-content{
+
+    padding: 0;
+
+}
+
+}
