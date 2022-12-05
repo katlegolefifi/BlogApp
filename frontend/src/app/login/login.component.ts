@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
 import jwt_decode from 'jwt-decode';
 import { NgToastService } from 'ng-angular-popup';
+import { AuthService } from '../service/auth.service';
 
 
 @Component({
@@ -12,6 +13,9 @@ import { NgToastService } from 'ng-angular-popup';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent{
+login() {
+throw new Error('Method not implemented.');
+}
   
  loginForm = new FormGroup({
 
@@ -21,7 +25,7 @@ export class LoginComponent{
   decoded: any;
   
 
- constructor(private userService: UserService, private router: Router, private toastservice : NgToastService ){}
+ constructor(private userService: UserService, private router: Router, private toastservice : NgToastService, private authService: AuthService ){}
 
  ngOnInit(): void {
 }
@@ -32,6 +36,7 @@ export class LoginComponent{
  }
 
  onSubmit(){
+  this.authService.login();
   console.log(this.loginForm.value);
   this.userService.login(this.loginForm.value).subscribe((data:any)=>{
     this.decoded = jwt_decode(data.token)

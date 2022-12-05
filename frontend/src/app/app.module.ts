@@ -12,6 +12,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NgToastModule } from 'ng-angular-popup'
+import { AuthService } from './service/auth.service';
+import { GuardService } from './service/guard.service';
 
 @NgModule({
   declarations: [	
@@ -31,7 +33,7 @@ import { NgToastModule } from 'ng-angular-popup'
     NgToastModule 
     
   ],
-  providers: [],
+  providers: [AuthService, GuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

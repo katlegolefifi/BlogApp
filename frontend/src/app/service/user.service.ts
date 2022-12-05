@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
+  IsAuthenticated() {
+    throw new Error("Method not implemented.");
+  }
 private baseUrl = "http://localhost:3000";
 constructor(private http: HttpClient) { }
 
