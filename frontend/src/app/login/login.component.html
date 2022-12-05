@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 	<div class="screen">
 		<div class="screen__content">
 			<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login">
@@ -31,4 +31,24 @@
 			<span class="screen__background__shape screen__background__shape1"></span>
 		</div>		
 	</div>
-</div>
+</div> -->
+<main class="mx-auto glass flex min-h-screen w-full items-center justify-center bg-blue-200" >
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login">
+	<div class="login__field">
+		<input formControlName="email" type="text" class="login__input" placeholder="Email">
+		<div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+		<div *ngIf="f.email.errors?.['required']">Email is required.</div>
+		<div *ngIf="f.email.errors?.['email']">Please enter valid email address.</div>
+		</div>
+	</div>
+	<div class="login__field">
+		<input type="password" formControlName="password" class="login__input" placeholder="Password" autocomplete="off">
+		<div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+			<div *ngIf="f.password.errors?.['required']">Password is required.</div>
+		</div>
+	</div>
+	<button (onClick)="login()" class="button login__submit">
+		<span class="button__text">Log In </span>
+	</button>				
+</form>
+</main>

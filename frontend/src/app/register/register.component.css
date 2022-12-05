@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
-* {
+/* * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;	
@@ -175,4 +175,64 @@ body {
 
 .social-login__icon:hover {
 	transform: scale(1.5);	
+} */
+/* ==================================== */
+
+
+.register {
+	width: 320px;
+	padding: 30px;
+	padding-top: 156px;
+}
+
+.register__field {
+	padding: 20px 0px;	
+	position: relative;	
+}
+.register__submit {
+	background: #fff;
+	font-size: 14px;
+	margin-top: 30px;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	color: #4C489D;
+	box-shadow: 0px 2px 2px #5C5696;
+	cursor: pointer;
+	transition: .2s;
+}
+.social-register__icon:hover {
+	transform: scale(1.5);	
+}
+
+.register__submit:active,
+.register__submit:focus,
+.register__submit:hover {
+	border-color: #6A679E;
+	outline: none;
+}
+.register__input {
+	border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+.register__input:active,
+.register__input:focus,
+.register__input:hover {
+	outline: none;
+	border-bottom-color: #6A679E;
+}
+
+body {
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
 }

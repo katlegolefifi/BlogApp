@@ -37,6 +37,8 @@ throw new Error('Method not implemented.');
 
  onSubmit(){
   this.authService.login();
+  if(this.loginForm.controls.email && this.loginForm.controls.password){
+
   console.log(this.loginForm.value);
   this.userService.login(this.loginForm.value).subscribe((data:any)=>{
     this.decoded = jwt_decode(data.token)
@@ -47,12 +49,14 @@ throw new Error('Method not implemented.');
     sessionStorage.setItem('logginToken', data.token)
     sessionStorage.setItem('loggedEmail', this.decoded.email);
 
-  })
+  },(error)=>{
+    this.toastservice.warning({detail: 'Warning', summary: 'Email or Password is invalid', sticky:false,position:'tr', duration:6000})
+  }
+  )
  }
 }
 
 
 
 
-
-
+}
