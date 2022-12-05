@@ -34,10 +34,10 @@ export class RegisterComponent {
    onSubmit(){
     console.log(this.registerForm.value);
 
-    this.userService.registerUser(this.registerForm.value).subscribe((next:any)=>{
+    this.userService.registerUser(this.registerForm.value).subscribe((data:any)=>{
       console.log('user added');
 
-      this.router.navigate(['/welcome']);
+      this.router.navigate(['/login']);
       
     })
 

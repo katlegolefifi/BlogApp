@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
+import jwt_decode from 'jwt-decode';
+import { NgToastService } from 'ng-angular-popup';
 
 
 @Component({
@@ -16,8 +18,10 @@ export class LoginComponent{
   email: new FormControl('',[Validators.required, Validators.email]),
   password: new FormControl('',[Validators.required, Validators.minLength(6),Validators.maxLength(40)])
  });
+  decoded: any;
+  
 
- constructor(private userService: UserService, private router: Router){}
+ constructor(private userService: UserService, private router: Router, private toastservice : NgToastService ){}
 
  ngOnInit(): void {
 }
@@ -29,10 +33,15 @@ export class LoginComponent{
 
  onSubmit(){
   console.log(this.loginForm.value);
-  this.userService.login(this.loginForm.value).subscribe((next:any)=>{
-    console.log('Login successsfull');
-    
-    this.router.navigate(['/welcome']);
+  this.userService.login(this.loginForm.value).subscribe((data:any)=>{
+    this.decoded = jwt_decode(data.token)
+    // console.log('Login successsfull');
+    this.toastservice.success({detail:'Success', summary:'Successfully login!', sticky:false,position:'tr', duration:6000})
+
+    this.router.navigate(['/home']);
+    sessionStorage.setItem('logginToken', data.token)
+    sessionStorage.setItem('loggedEmail', this.decoded.email);
+
   })
  }
 }

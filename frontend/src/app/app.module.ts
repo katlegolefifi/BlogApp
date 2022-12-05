@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { NgToastModule } from 'ng-angular-popup'
 
 @NgModule({
   declarations: [	
@@ -17,6 +19,7 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     RegisterComponent,
     WelcomeComponent,
+    HomeComponent,
    ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    NgToastModule 
     
   ],
   providers: [],
